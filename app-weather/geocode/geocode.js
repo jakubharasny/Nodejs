@@ -3,9 +3,9 @@ const request = require('request');
 var geolocation = (address, callback) => {
 
     var encodedAddress = encodeURIComponent(address);
-    var key = process.env.GOOGLE_API_KEY
+    var googleKey = process.env.GOOGLE_API_KEY
 
-    var url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${key}`
+    var url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${googleKey}`
 
     request({
         url,
