@@ -5,4 +5,4 @@
 <img src="https://miro.medium.com/max/850/0*WpXBkrfgR2g9dw2T.png" alt="Smiley face" width="300" height="183"></p>
 <br>
 <br>
-<h3>More in projects folders<h3>
+<h3>More in project folders<h3>
