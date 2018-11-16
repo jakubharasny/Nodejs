@@ -1,5 +1,3 @@
-// Przeciez to nie jest funkcja ktora mi zwraca RETURN "dupa", zmienna ?
-
 
 var getWeather = (variable) => {
   variable('dupa')
