@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.1.0",
     "eslint": "^5.9.0",
     "request": "^2.88.0",
@@ -17,5 +18,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jakubharasny/Nodejs.git"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
   }
 }

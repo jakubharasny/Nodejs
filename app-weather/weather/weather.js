@@ -24,4 +24,3 @@ var getWeather = (latitude, longitude, callback) => {
 }
 
 module.exports.getWeather = getWeather;
-

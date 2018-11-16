@@ -1,11 +1,11 @@
-console.log('starting app');
+console.log('starting app')
 
-setTimeout( () => {
-    console.log('Inside of callback');
+setTimeout(() => {
+  console.log('Inside of callback')
 }, 2000)
 
 setTimeout(() => {
-    console.log('Second setTimeout works');
+  console.log('Second setTimeout works')
 }, 0)
 
 console.log('Finishing app')
