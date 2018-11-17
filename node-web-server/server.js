@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 const express = require('express');
 const hbs = require('hbs'); // eslint-disable-line
 const app = express();
+const fs = require('fs');
 
 hbs.registerPartials(`${__dirname}/views/partials`);
 app.set('view engine', 'hbs');
@@ -11,7 +13,25 @@ hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
 hbs.registerHelper('screamIt', text => text.toUpperCase());
 
 // all files/pages inside public directory
-app.use(express.static(`${__dirname}/public`)); // Express Middleware
+// Express Middleware
+
+app.use((req, res, next) => {
+  const now = new Date().toString();
+  const log = `${now} ${req.method} ${req.url}`;
+  console.log(log);
+  fs.appendFile('server.log', `${log}\n`, (err) => {
+    if (err) {
+      console.log('Unable to append server.log');
+    }
+  });
+  next(); // necessary for middleware to finish
+});
+
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
+
+app.use(express.static(`${__dirname}/public`));
 
 // specific pages rendered through hbs
 app.get('/', (req, res) => {
@@ -35,6 +55,5 @@ app.get('/bad', (req, res) => {
 });
 
 app.listen(3000, () => {
-  // eslint-disable-next-line no-console
   console.log('Server is up on localhost:3000');
 });
