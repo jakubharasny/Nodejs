@@ -62,4 +62,5 @@ typings/
 .next
 # Course notes
 myNotes/
+
 .DS_Store
